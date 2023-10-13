@@ -50,6 +50,121 @@ body {
 .footUl li:hover {
   color: #43d5be;
 }
+/* looder section start */
+.loder {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 454;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item1 {
+  width: 2px;
+  height: 20px;
+  background-color: #43d5be;
+  animation: animat infinite 0.5s linear;
+  transition: all 0.3s;
+}
+.item2 {
+  width: 2px;
+  height: 20px;
+  background-color: #43d5be;
+  margin-left: 4px;
+  animation: animat2 infinite 0.5s linear;
+  animation-delay: 0.3s;
+  transition: all 0.3s;
+}
+.item3 {
+  width: 2px;
+  height: 20px;
+  background-color: #43d5be;
+  margin-left: 4px;
+  animation: animat3 infinite 0.5s linear;
+  transition: all 0.3s;
+}
+.item4 {
+  width: 2px;
+  height: 20px;
+  background-color: #43d5be;
+  margin-left: 4px;
+  animation: animat4 infinite 0.5s linear;
+  transition: all 0.3s;
+}
+.item5 {
+  width: 2px;
+  height: 20px;
+  background-color: #43d5be;
+  margin-left: 4px;
+  animation: animat5 infinite 0.5s linear;
+  transition: all 0.3s;
+}
+
+@keyframes animat {
+  0% {
+    height: 20px;
+  }
+
+  100% {
+    height: 0px;
+  }
+}
+@keyframes animat2 {
+  0% {
+    height: 0px;
+  }
+
+  100% {
+    height: 20px;
+  }
+}
+@keyframes animat3 {
+  0% {
+    height: 20px;
+  }
+
+  100% {
+    height: 0px;
+  }
+}
+@keyframes animat4 {
+  0% {
+    height: 0px;
+  }
+
+  100% {
+    height: 20px;
+  }
+}
+@keyframes animat5 {
+  0% {
+    height: 20px;
+  }
+
+  100% {
+    height: 0px;
+  }
+}
+
+.searchContainer {
+  display: none;
+}
+.profileMenu {
+  position: absolute;
+  top: -100%;
+  width: 35%;
+  height: 40vh;
+  right: 0;
+  z-index: 1254;
+  background-color: white;
+  border-radius: 10px 0px 0px 10px;
+  transition: all 0.3s;
+}
+#profileMenu.ne {
+  top: 64px;
+}
 @media (max-width: 600px) {
   .card:hover .addCart {
     bottom: 5px;

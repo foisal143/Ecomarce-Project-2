@@ -34,7 +34,18 @@
 </head>
 
 <body>
-  <nav class=" md:px-12 w-full overflow-hidden">
+  <!-- looder section -->
+  <div id="loder" class="loder ">
+    <div class=" inner flex justify-center itmes-center">
+      <div class="item1"></div>
+      <div class="item2"></div>
+      <div class="item3"></div>
+      <div class="item4"></div>
+      <div class="item5"></div>
+    </div>
+  </div>
+  <!-- looder section end-->
+  <nav class=" md:px-12  w-full overflow-hidden">
     <div class="navbar ">
       <div class="navbar-start">
 
@@ -57,10 +68,14 @@
         <button id="searchBtn" class="mx-5 text-2xl"><i class="fa-solid fa-magnifying-glass"></i></button>
         <!-- search input -->
         <div id="searchContainer"
-          class=" w-full hidden z-10  justify-center items-center md:w-2/3 h-12 bg-red absolute top-20 px-12 ">
+          class=" w-full hidden z-10  justify-center items-center md:w-2/3 h-12  absolute top-20 px-12 ">
           <div class="w-full h-full  flex justify-between items-center ps-5 bg-white py-3 shadow-md rounded-full">
-            <input class=" px-3 border-none outline-none w-10/12" type="text" placeholder="Search">
-            <button class="bg-allColor text-white rounded-full px-8 hover:bg-black transition-all py-3">Search</button>
+            <input class=" px-3 border-none outline-none w-[80%]" type="text" placeholder="Search">
+            <button
+              class="bg-allColor text-white rounded-s-full px-4 md:px-8 hover:bg-black transition-all py-3">Search</button>
+            <button
+              class="text-2xl  bg-black text-white rounded-e-full md:px-8 hover:bg-allColor transition-all px-4 py-2"><i
+                id="crossSearch" class="fa-solid fa-xmark "></i></button>
           </div>
         </div>
         <a class="btn text-2xl"><i class="fa-brands fa-opencart"></i></a>
@@ -68,11 +83,32 @@
             class="fa-solid fa-bars-staggered"></i>
           <i id="crosBtn" class="fa-solid fa-xmark hidden"></i>
         </button>
+        <div id="profileBtn" class="cursor-pointer hidden md:block ms-4 py-3 px-4 rounded-full bg-slate-200">
+          <i class="fa-solid fa-user cursor-pointer"></i>
+
+        </div>
+      </div>
+      <!-- profile menu -->
+      <div id="profileMenu" class="profileMenu">
+        <ul class="text-2xl nav-ul font-monot w-full text-center">
+          <li class="my-3  p-2 rounded hover:bg-slate-300 transition-all"><a href="">About</a></li>
+          <li class="my-3  p-2 rounded hover:bg-slate-300 transition-all"><a href="">Blog</a></li>
+          <li class="my-3  p-2 rounded hover:bg-slate-300 transition-all"><a href="">Details</a></li>
+          <li class="my-3  p-2 rounded hover:bg-slate-300 transition-all"><a href="">Logout</a></li>
+        </ul>
       </div>
       <!-- dropdown menu  -->
       <div id="dropdown-menu"
         class="absolute md:hidden rounded-e-md flex justify-center items-center mx-auto h-[100vh]">
-        <ul class="menu nav-ul text-center  px-1">
+        <ul class="menu  nav-ul text-center  px-1">
+          <li class="w-fit">
+
+
+            <div id="profileBtn2" class="cursor-pointer inline  md:block ms-4 py-3 px-4 rounded-full bg-slate-200">
+              <i class="fa-solid fa-user cursor-pointer"></i>
+
+            </div>
+          </li>
           <li><a href="index.html">Home</a></li>
           <li tabindex="0">
 
@@ -97,7 +133,8 @@
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod ducimus nobis dolores! Magnam impedit
               incidunt quae in iusto nobis eos molestiae sequi eius nemo similique maiores nihil, ab voluptas ipsum.
             </p>
-            <button class="px-8 hover:bg-black transition-all  py-2 my-5 bg-allColor rounded-md">Shop Now</button>
+            <button class="px-8 hover:bg-black transition-all  py-2 my-5 bg-allColor rounded-md"><a
+                href="#menFashion">Shop Now</a></button>
           </div>
         </div>
 
@@ -114,7 +151,9 @@
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod ducimus nobis dolores! Magnam impedit
               incidunt quae in iusto nobis eos molestiae sequi eius nemo similique maiores nihil, ab voluptas ipsum.
             </p>
-            <button class="px-8  hover:bg-black transition-all py-2 my-5 bg-allColor rounded-md">Shop Now</button>
+            <button class="px-8 hover:bg-black transition-all  py-2 my-5 bg-allColor rounded-md"><a
+                href="#Accessories">Shop
+                Now</a></button>
           </div>
         </div>
         <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -131,7 +170,9 @@
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod ducimus nobis dolores! Magnam impedit
               incidunt quae in iusto nobis eos molestiae sequi eius nemo similique maiores nihil, ab voluptas ipsum.
             </p>
-            <button class="px-8 hover:bg-black transition-all py-2 my-5 bg-allColor rounded-md">Shop Now</button>
+            <button class="px-8 hover:bg-black transition-all  py-2 my-5 bg-allColor rounded-md"><a
+                href="#Accessories">Shop
+                Now</a></button>
           </div>
         </div>
         <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -147,7 +188,9 @@
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod ducimus nobis dolores! Magnam impedit
               incidunt quae in iusto nobis eos molestiae sequi eius nemo similique maiores nihil, ab voluptas ipsum.
             </p>
-            <button class="px-8 hover:bg-black transition-all py-2 my-5 bg-allColor rounded-md">Shop Now</button>
+            <button class="px-8 hover:bg-black transition-all  py-2 my-5 bg-allColor rounded-md"><a
+                href="#womenFashion">Shop
+                Now</a></button>
           </div>
         </div>
         <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -466,7 +509,7 @@
     </section>
   </main>
 
-  <footer class=" flex justify-center items-center   h-[50vh]">
+  <footer class=" flex justify-center items-center   h-[40vh]">
     <div class="grid grid-cols-1 w-full gap-5 md:grid-cols-4 px-12">
       <div class=" p-2">
         <a class=" font-bebas text-allColor normal-case text-3xl">Fashion <span class="text-black">Bd</span></a>

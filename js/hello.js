@@ -13,10 +13,33 @@ navCross.addEventListener('click', () => {
   navCross.style.display = 'none';
   navBtn.style.display = 'block';
 });
-
+// profile section
+document.getElementById('profileBtn').addEventListener('click', () => {
+  const profeleMenu = document.getElementById('profileMenu');
+  if (profeleMenu.classList == 'profileMenu') {
+    profeleMenu.classList.add('ne');
+  } else {
+    profeleMenu.classList.remove('ne');
+  }
+});
+document.getElementById('profileBtn2').addEventListener('click', () => {
+  const profeleMenu = document.getElementById('profileMenu');
+  if (profeleMenu.classList == 'profileMenu') {
+    profeleMenu.classList.add('ne');
+  } else {
+    profeleMenu.classList.remove('ne');
+  }
+});
 // search section btn
+const dHidden = document.getElementById('searchContainer');
 document.getElementById('searchBtn').addEventListener('click', () => {
-  const dHidden = document.getElementById('searchContainer');
-
-  dHidden.style.display = 'flex';
+  dHidden.style.display = 'block';
+});
+document.getElementById('crossSearch').addEventListener('click', () => {
+  dHidden.style.display = 'none';
+});
+// looder section
+window.addEventListener('load', () => {
+  const loder = document.getElementById('loder');
+  loder.style.display = 'none';
 });
