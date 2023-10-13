@@ -172,4 +172,7 @@ body {
   .addCart {
     bottom: 5px;
   }
+  .profileMenu {
+    height: 51vh;
+  }
 }
