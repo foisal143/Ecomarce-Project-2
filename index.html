@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gabarito:wght@600&family=Montserrat:ital,wght@0,500;1,400;1,500&family=Nanum+Gothic&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            allColor: '#43d5be',
+          },
+          fontFamily: {
+            bebas: 'Bebas Neue',
+            monot: 'Montserrat'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Ecomarce Project</title>
+</head>
+
+<body>
+  <nav class=" md:px-12 w-full overflow-hidden">
+    <div class="navbar ">
+      <div class="navbar-start">
+
+        <a class=" font-bebas text-allColor normal-case text-3xl">Fashion <span class="text-black">Bd</span></a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu nav-ul menu-horizontal px-1">
+          <li><a href="index.html">Home</a></li>
+          <li tabindex="0">
+
+            <a href="#Accessories">Accessories</a>
+
+
+          </li>
+          <li><a href="#menFashion">Men Fashion</a></li>
+          <li><a href="#womenFashion">Women Fashion</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <button id="searchBtn" class="mx-5 text-2xl"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <!-- search input -->
+        <div id="searchContainer"
+          class=" w-full hidden z-10  justify-center items-center md:w-2/3 h-12 bg-red absolute top-20 px-12 ">
+          <div class="w-full h-full  flex justify-between items-center ps-5 bg-white py-3 shadow-md rounded-full">
+            <input class=" px-3 border-none outline-none w-10/12" type="text" placeholder="Search">
+            <button class="bg-allColor text-white rounded-full px-8 hover:bg-black transition-all py-3">Search</button>
+          </div>
+        </div>
+        <a class="btn text-2xl"><i class="fa-brands fa-opencart"></i></a>
+        <button class="mx-5 md:hidden text-2xl" id="toggleCont"><i id="toggleBtn"
+            class="fa-solid fa-bars-staggered"></i>
+          <i id="crosBtn" class="fa-solid fa-xmark hidden"></i>
+        </button>
+      </div>
+      <!-- dropdown menu  -->
+      <div id="dropdown-menu"
+        class="absolute md:hidden rounded-e-md flex justify-center items-center mx-auto h-[100vh]">
+        <ul class="menu nav-ul text-center  px-1">
+          <li><a href="index.html">Home</a></li>
+          <li tabindex="0">
+
+            <a href="#Accessories">Accessories</a>
+
+
+          </li>
+          <li><a href="#menFashion">Men Fashion</a></li>
+          <li><a href="#womenFashion">Women Fashion</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- header section -->
+  <header class="md:px-12 mt-28">
+    <div class="carousel h-[60vh] w-full">
+      <div id="slide1" class="carousel-item relative w-full">
+        <div class="w-full bg-cover sliders  flex justify-center items-center bg-center bg-[url('/img/model-1.jpg')]">
+          <div class="text-white text-center z-10 w-2/3">
+            <h1 class="text-7xl font-bebas">The <span class="text-allColor">Fashion BD</span> House</h1>
+            <p class="font-monot">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod ducimus nobis dolores! Magnam impedit
+              incidunt quae in iusto nobis eos molestiae sequi eius nemo similique maiores nihil, ab voluptas ipsum.
+            </p>
+            <button class="px-8 hover:bg-black transition-all  py-2 my-5 bg-allColor rounded-md">Shop Now</button>
+          </div>
+        </div>
+
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide4" class="btn btn-circle hover:bg-allColor hover:text-white">❮</a>
+          <a href="#slide2" class="btn btn-circle hover:bg-allColor hover:text-white">❯</a>
+        </div>
+      </div>
+      <div id="slide2" class="carousel-item relative w-full">
+        <div class="w-full bg-cover sliders  flex justify-center items-center bg-center bg-[url('/img/model-2.jpg')]">
+          <div class="text-white text-center z-10 w-2/3">
+            <h1 class="text-7xl font-bebas">The <span class="text-allColor">Fashion BD</span> House</h1>
+            <p class="font-monot">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod ducimus nobis dolores! Magnam impedit
+              incidunt quae in iusto nobis eos molestiae sequi eius nemo similique maiores nihil, ab voluptas ipsum.
+            </p>
+            <button class="px-8  hover:bg-black transition-all py-2 my-5 bg-allColor rounded-md">Shop Now</button>
+          </div>
+        </div>
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide1" class="btn btn-circle hover:bg-allColor hover:text-white">❮</a>
+          <a href="#slide3" class="btn btn-circle hover:bg-allColor hover:text-white">❯</a>
+        </div>
+      </div>
+      <div id="slide3" class="carousel-item relative w-full">
+        <div
+          class="w-full bg-cover sliders  flex justify-center items-center bg-center bg-[url('/img/model-3.0.webp')]">
+          <div class="text-white text-center z-10 w-2/3">
+            <h1 class="text-7xl font-bebas">The <span class="text-allColor">Fashion BD</span> House</h1>
+            <p class="font-monot">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod ducimus nobis dolores! Magnam impedit
+              incidunt quae in iusto nobis eos molestiae sequi eius nemo similique maiores nihil, ab voluptas ipsum.
+            </p>
+            <button class="px-8 hover:bg-black transition-all py-2 my-5 bg-allColor rounded-md">Shop Now</button>
+          </div>
+        </div>
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide2" class="btn btn-circle hover:bg-allColor hover:text-white">❮</a>
+          <a href="#slide4" class="btn btn-circle hover:bg-allColor hover:text-white">❯</a>
+        </div>
+      </div>
+      <div id="slide4" class="carousel-item relative w-full">
+        <div class="w-full bg-cover sliders  flex justify-center items-center bg-center bg-[url('/img/model-4.jpg')]">
+          <div class="text-white text-center z-10 w-2/3">
+            <h1 class="text-7xl font-bebas">The <span class="text-allColor">Fashion BD</span> House</h1>
+            <p class="font-monot">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod ducimus nobis dolores! Magnam impedit
+              incidunt quae in iusto nobis eos molestiae sequi eius nemo similique maiores nihil, ab voluptas ipsum.
+            </p>
+            <button class="px-8 hover:bg-black transition-all py-2 my-5 bg-allColor rounded-md">Shop Now</button>
+          </div>
+        </div>
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide3" class="btn btn-circle hover:bg-allColor hover:text-white">❮</a>
+          <a href="#slide1" class="btn btn-circle hover:bg-allColor hover:text-white">❯</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Accessories section  -->
+    <section id="Accessories" class="mt-28 md:px-12 ">
+      <div class="w-full ">
+        <h2 class="font-bebas text-4xl border-allColor border-b-2 w-fit mx-auto">Accessories</h2>
+
+      </div>
+      <div class="grid px-5 md:px-12 mt-20 grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/watch-1.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center md:px-4">
+            <h2 class="font-bebas text-2xl my-2">Watch</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card  relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/watch-2.jpeg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  md:px-4">
+            <h2 class="font-bebas text-2xl my-2">Watch</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/watch-3.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Watch</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/shoe-1.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Shoes</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>300</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/shoe-2.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Shoes</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/shoe-3.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Shoes</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>250</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- men fashion section -->
+    <section id="menFashion" class="mt-28 md:px-12 ">
+      <div>
+        <h2 class="font-bebas w-fit mx-auto border-b-2 border-allColor text-4xl">Mens Fahsion</h2>
+      </div>
+      <!-- mens all fashion card section -->
+      <div class="grid px-5 md:px-12 mt-20 grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/shirt-1.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center md:px-4">
+            <h2 class="font-bebas text-2xl my-2">Shirt</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card  relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/shirt-2.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  md:px-4">
+            <h2 class="font-bebas text-2xl my-2">Shirt</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/shirt-3.webp" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Shirt</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/pants-1.webp" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Pants</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>300</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/pants-2.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Pants</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/pants-3.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Pants</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>250</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- women fashion section -->
+    <section id="womenFashion" class="mt-28 md:px-12 ">
+      <div>
+        <h2 class="font-bebas w-fit mx-auto border-b-2 border-allColor text-4xl">Whomen Fahsion</h2>
+      </div>
+      <!-- womens all fashion card section -->
+      <div class="grid px-5 md:px-12 mt-20 grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/shari-1.jpeg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center md:px-4">
+            <h2 class="font-bebas text-2xl my-2">Shari</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card  relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/shari-2.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  md:px-4">
+            <h2 class="font-bebas text-2xl my-2">Shari</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/shari-3.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Shari</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/threePice-1.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Three Picese</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>300</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/threePice-2.jpg" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Three Picese</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>200</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+        <div class="card relative h-[430px] overflow-hidden mx-12 md:mx-0 bg-base-100 shadow-xl ">
+          <figure class="w-full h-1/2">
+            <img src="img/threePice-3.webp" alt="Shoes" class="rounded-xl " />
+          </figure>
+          <div class=" my-8 items-center  px-4">
+            <h2 class="font-bebas text-2xl my-2">Three Picese</h2>
+            <p class="font-monot my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, eos!</p>
+            <p>Price:$<span>250</span></p>
+          </div>
+          <div class="w-fit addCart  mx-auto">
+            <button class="px-8 py-3 rounded-md hover:bg-black transition-all bg-allColor text-white">Add To
+              Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- some extra fields -->
+    <section class="mt-28 py-5 md:px-12 gap-8 text-white bg-[#282828] grid grid-cols-1 md:grid-cols-3">
+      <div class="flex justify-evenly items-center">
+        <i class="fa-solid fa-truck text-7xl me-5"></i>
+        <div>
+          <h2 class="font-bebas text-2xl">Extra fast delivery</h2>
+          <p class="font-monot ">Your order will be delivered 3-5 business days after all of your items are available
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-evenly items-center">
+        <i class="fa-solid fa-hand-holding-dollar text-7xl me-5"></i>
+        <div>
+          <h2 class="font-bebas text-2xl">Best price</h2>
+          <p class="font-monot ">We'll match the product prices of key online and local competitors for immediately
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-evenly items-center">
+        <i class="fa-solid fa-person-walking-arrow-loop-left text-7xl me-5"></i>
+        <div>
+          <h2 class="font-bebas text-2xl">Extra fast delivery</h2>
+          <p class="font-monot ">Your order will be delivered 3-5 business days after all of your items are available
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class=" flex justify-center items-center   h-[50vh]">
+    <div class="grid grid-cols-1 w-full gap-5 md:grid-cols-4 px-12">
+      <div class=" p-2">
+        <a class=" font-bebas text-allColor normal-case text-3xl">Fashion <span class="text-black">Bd</span></a>
+        <p>Email: islmamdfoisal54@gmail.com</p>
+        <p>Phone: 01403406419</p>
+      </div>
+      <div class="">
+        <h2 class="font-bebas text-xl">Information</h2>
+        <ul class="footUl">
+          <li class="cursor-pointer">About</li>
+          <li class="cursor-pointer">Contuct</li>
+          <li class="cursor-pointer">Blog</li>
+          <li class="cursor-pointer">Turms & Condition</li>
+          <li class="cursor-pointer">Returns & Exchanges</li>
+        </ul>
+      </div>
+      <div class="">
+        <h2 class="font-bebas text-xl">Account details</h2>
+        <ul class="footUl">
+          <li class="cursor-pointer">My Account</li>
+          <li class="cursor-pointer">View Cart</li>
+          <li class="cursor-pointer">My Wishlist</li>
+          <li class="cursor-pointer">Order Status</li>
+          <li class="cursor-pointer">Track My Order</li>
+        </ul>
+      </div>
+      <div class="">
+        <h2 class="font-bebas text-xl">Safe payments</h2>
+        <div class="flex justify-between items-center">
+          <h3 class="text-3xl font-bold  hover:text-allColor">G <span class="text-2xl font-normal">Pay</span></h3>
+
+          <h3 class="text-3xl font-bold   hover:text-allColor">VISA</h3>
+          <h3 class="text-3xl font-bold  hover:text-allColor"><i class="fa-brands fa-apple"></i> <span
+              class="text-2xl font-normal">Pay</span></h3>
+        </div>
+        <fieldset class=" px-5 my-2 border-2 border-dashed border-black">
+          <legend> <i class="fa-solid fa-scissors text-3xl mx-1"></i></legend>
+          <a class=" font-bebas text-allColor normal-case text-3xl">Fashion <span class="text-black">Bd</span></a>
+        </fieldset>
+      </div>
+
+    </div>
+  </footer>
+  <!-- js files section  -->
+  <script src="js/tailwind.config.js"></script>
+  <script src="js/hello.js"></script>
+</body>
+
+</html>
