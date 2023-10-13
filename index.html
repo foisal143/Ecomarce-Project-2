@@ -78,7 +78,8 @@
                 id="crossSearch" class="fa-solid fa-xmark "></i></button>
           </div>
         </div>
-        <a class="btn text-2xl"><i class="fa-brands fa-opencart"></i></a>
+        <a id="cartBtn" class="btn  relative text-2xl"><i class="fa-brands fa-opencart"></i> <span
+            id="notify"></span></a>
         <button class="mx-5 md:hidden text-2xl" id="toggleCont"><i id="toggleBtn"
             class="fa-solid fa-bars-staggered"></i>
           <i id="crosBtn" class="fa-solid fa-xmark hidden"></i>
@@ -119,6 +120,13 @@
           <li><a href="#menFashion">Men Fashion</a></li>
           <li><a href="#womenFashion">Women Fashion</a></li>
         </ul>
+      </div>
+      <!-- cart menu -->
+      <div id="cartSection" class="cartSection">
+        <div id="cartMenu" class="w-full text-center my-5  flex flex-col">
+          No Product are select for buy!
+        </div>
+
       </div>
     </div>
   </nav>

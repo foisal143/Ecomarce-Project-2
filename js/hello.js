@@ -43,3 +43,33 @@ window.addEventListener('load', () => {
   const loder = document.getElementById('loder');
   loder.style.display = 'none';
 });
+
+// cart section
+document.getElementById('cartBtn').addEventListener('click', () => {
+  const profeleMenu = document.getElementById('cartSection');
+  if (profeleMenu.classList == 'cartSection') {
+    profeleMenu.classList.add('showCart');
+  } else {
+    profeleMenu.classList.remove('showCart');
+  }
+});
+// add to cart section
+let count = 0;
+const addCart = document.getElementsByClassName('addCart');
+for (const cartBtn of addCart) {
+  cartBtn.addEventListener('click', e => {
+    count += 1;
+    const element = e.target.parentNode.parentNode;
+    const innerCart = document.getElementById('cartMenu');
+    innerCart.innerHTML = `${element}
+    <div class="block">
+          <p class="font-monot text-2xl my-5">Quantity: <i class="fa-solid fa-minus ms-20 me-5 cursor-pointer"></i>
+            <span id="quantity">1</span> <i class="fa-solid fa-plus mx-5 cursor-pointer"></i>
+          </p>
+          <button class="px-8 py-2 bg-allColor text-white hover:bg-black rounded">Buy Now</button>
+        </div>
+    `;
+    document.getElementById('notify').style.backgroundColor = 'red';
+    document.getElementById('notify').innerText = count;
+  });
+}
