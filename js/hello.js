@@ -44,6 +44,30 @@ window.addEventListener('load', () => {
   loder.style.display = 'none';
 });
 
+// search input area for find product
+document.getElementById('searchBtn2').addEventListener('click', () => {
+  const searchInput = document.getElementById('searchInput').value;
+
+  if (searchInput == 'men fashion') {
+    window.location.href = '#menFashion';
+    return;
+  } else if (searchInput == 'shirt') {
+    window.location.href = '#menFashion';
+    return;
+  } else if (searchInput == 'pants') {
+    window.location.href = '#menFashion';
+    return;
+  } else if (searchInput == 'women fashion') {
+    window.location.href = '#womenFashion';
+    return;
+  } else if (searchInput == 'watch') {
+    window.location.href = '#Accessories';
+    return;
+  } else {
+    alert('prduct not found');
+  }
+});
+
 // cart section
 document.getElementById('cartBtn').addEventListener('click', () => {
   const profeleMenu = document.getElementById('cartSection');
@@ -55,20 +79,44 @@ document.getElementById('cartBtn').addEventListener('click', () => {
 });
 // add to cart section
 let count = 0;
-const addCart = document.getElementsByClassName('addCart');
+const addCart = document.getElementsByClassName('card');
 for (const cartBtn of addCart) {
   cartBtn.addEventListener('click', e => {
     count += 1;
     const element = e.target.parentNode.parentNode;
+
     const innerCart = document.getElementById('cartMenu');
-    innerCart.innerHTML = `${element}
+    innerCart.innerHTML = `
     <div class="block">
-          <p class="font-monot text-2xl my-5">Quantity: <i class="fa-solid fa-minus ms-20 me-5 cursor-pointer"></i>
-            <span id="quantity">1</span> <i class="fa-solid fa-plus mx-5 cursor-pointer"></i>
-          </p>
-          <button class="px-8 py-2 bg-allColor text-white hover:bg-black rounded">Buy Now</button>
-        </div>
+    <p class="font-monot text-2xl my-5">Quantity: <i id="minus" class="fa-solid fa-minus ms-10 me-5 cursor-pointer"></i>
+    <span id="quantity">1</span> <i id="plus" class="fa-solid fa-plus mx-5 cursor-pointer"></i>
+    </p>
+      
+    <button class="px-8 py-2 my-3 bg-allColor text-white hover:bg-black rounded">Buy Now</button>
+    </div>
     `;
+
+    // all variable here
+    const minus = document.getElementById('minus');
+    const plus = document.getElementById('plus');
+    const quantityField = document.getElementById('quantity');
+    const quantityString = quantityField.innerText;
+    let quantity = parseInt(quantityString);
+
+    // increase and decrease the amount of quantity
+    minus.addEventListener('click', () => {
+      quantity -= 1;
+      quantityField.innerText = quantity;
+    });
+    plus.addEventListener('click', () => {
+      quantity += 1;
+      quantityField.innerText = quantity;
+    });
+
+    const li = document.createElement('li');
+    li.append(element);
+
+    innerCart.prepend(li);
     document.getElementById('notify').style.backgroundColor = 'red';
     document.getElementById('notify').innerText = count;
   });
