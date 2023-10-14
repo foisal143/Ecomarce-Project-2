@@ -84,14 +84,18 @@ for (const cartBtn of addCart) {
   cartBtn.addEventListener('click', e => {
     count += 1;
     const element = e.target.parentNode.parentNode;
-
+    //  total calculationn here for all carts
+    const priceString =
+      e.target.parentNode.parentNode.children[1].children[2].children[0]
+        .innerText;
+    const price = parseFloat(priceString);
     const innerCart = document.getElementById('cartMenu');
     innerCart.innerHTML = `
     <div class="block">
     <p class="font-monot text-2xl my-5">Quantity: <i id="minus" class="fa-solid fa-minus ms-10 me-5 cursor-pointer"></i>
     <span id="quantity">1</span> <i id="plus" class="fa-solid fa-plus mx-5 cursor-pointer"></i>
     </p>
-      
+      <p class="text-4xl font-monot font-semibold">Total Cost: <span id="total">${price}</span></p>
     <button class="px-8 py-2 my-3 bg-allColor text-white hover:bg-black rounded">Buy Now</button>
     </div>
     `;
@@ -102,15 +106,23 @@ for (const cartBtn of addCart) {
     const quantityField = document.getElementById('quantity');
     const quantityString = quantityField.innerText;
     let quantity = parseInt(quantityString);
+    // calculation
+    const totalMulti = price * quantity;
+    const totalField = document.getElementById('total');
+    let totalValue = parseFloat(totalField.innerText);
 
     // increase and decrease the amount of quantity
     minus.addEventListener('click', () => {
       quantity -= 1;
       quantityField.innerText = quantity;
+      totalValue -= totalMulti;
+      totalField.innerText = totalValue;
     });
     plus.addEventListener('click', () => {
       quantity += 1;
       quantityField.innerText = quantity;
+      totalValue += totalMulti;
+      totalField.innerText = totalValue;
     });
 
     const li = document.createElement('li');

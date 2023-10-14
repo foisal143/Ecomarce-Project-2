@@ -16,7 +16,7 @@ body {
   text-transform: uppercase;
 }
 .nav-ul li:hover a {
-  background-color: white;
+  background-color: transparent;
   color: #43d5be;
 }
 #dropdown-menu {
@@ -177,7 +177,7 @@ body {
   transition: all 0.3s;
 }
 #profileMenu.ne {
-  top: 64px;
+  top: 80px;
 }
 /* cart section */
 .cartSection {
@@ -216,7 +216,7 @@ body {
   align-items: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 830px) {
   .card:hover .addCart {
     bottom: 5px;
   }
@@ -224,7 +224,7 @@ body {
     bottom: 5px;
   }
   .profileMenu {
-    height: 51vh;
+    height: 48vh;
   }
   .cartSection {
     width: 100%;
