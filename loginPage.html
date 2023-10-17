@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gabarito:wght@600&family=Montserrat:ital,wght@0,500;1,400;1,500&family=Nanum+Gothic&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            allColor: '#43d5be',
+          },
+          fontFamily: {
+            bebas: 'Bebas Neue',
+            monot: 'Montserrat'
+          }
+        }
+      }
+    }
+  </script>
+  <title>Fashion BD</title>
+</head>
+
+<body>
+  <!-- navbar section -->
+  <nav class=" md:px-12  w-full overflow-hidden">
+    <div class="navbar mt-5">
+      <div class="navbar-start">
+
+        <a class=" font-bebas text-allColor normal-case text-3xl">Fashion <span class="text-black">Bd</span></a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu nav-ul menu-horizontal px-1">
+          <li class=" hover:bg-white hover:text-allColor"><a href="index.html">Home</a></li>
+          <li class=" hover:bg-white hover:text-allColor" tabindex="0">
+
+            <a href="#Accessories">Accessories</a>
+
+
+          </li>
+          <li class=" hover:bg-white hover:text-allColor"><a href="#menFashion">Men Fashion</a></li>
+          <li class=" hover:bg-white hover:text-allColor"><a href="#womenFashion">Women Fashion</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <button id="searchBtn" class="mx-5 text-2xl"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <!-- search input -->
+        <div id="searchContainer"
+          class=" w-full hidden z-10  justify-center items-center md:w-2/3 h-12  absolute top-20 px-12 mt-5">
+          <div class="w-full h-full  flex justify-between items-center ps-5 bg-white py-3 shadow-md rounded-full">
+            <input id="searchInput" class=" px-3 border-none outline-none w-[80%]" type="text" placeholder="Search">
+            <button id="searchBtn2"
+              class="bg-allColor text-white rounded-s-full px-4 md:px-8 hover:bg-black transition-all py-3">Search</button>
+            <button
+              class="text-2xl  bg-black text-white rounded-e-full md:px-8 hover:bg-allColor transition-all px-4 py-2"><i
+                id="crossSearch" class="fa-solid fa-xmark "></i></button>
+          </div>
+        </div>
+        <a id="cartBtn" class="btn  relative text-2xl"><i class="fa-brands fa-opencart"></i> <span
+            id="notify"></span></a>
+        <button class="mx-5 md:hidden text-2xl" id="toggleCont"><i id="toggleBtn"
+            class="fa-solid fa-bars-staggered"></i>
+          <i id="crosBtn" class="fa-solid fa-xmark hidden"></i>
+        </button>
+        <div id="profileBtn" class="cursor-pointer hidden md:block ms-4 py-3 px-4 rounded-full bg-slate-200">
+          <i class="fa-solid fa-user cursor-pointer"></i>
+
+        </div>
+      </div>
+      <!-- profile menu -->
+      <div id="profileMenu" class="profileMenu">
+        <ul class="text-2xl nav-ul font-monot w-full text-center">
+          <li class="md:my-3  p-2 rounded hover:bg-slate-100 transition-all"><a href="">About</a></li>
+          <li class="md:my-3  p-2 rounded hover:bg-slate-100 transition-all"><a href="">Blog</a></li>
+          <li class="md:my-3  p-2 rounded hover:bg-slate-100 transition-all"><a href="">Details</a></li>
+          <li class="md:my-3  p-2 rounded hover:bg-slate-100 transition-all"><a href="">Logout</a></li>
+        </ul>
+      </div>
+      <!-- dropdown menu  -->
+      <div id="dropdown-menu"
+        class="absolute md:hidden rounded-e-md flex justify-center items-center mx-auto h-[100vh]">
+        <ul class="menu  nav-ul text-center  px-1">
+          <li class="w-fit">
+
+
+            <div id="profileBtn2" class="cursor-pointer inline  md:block ms-4 py-3 px-4 rounded-full bg-slate-200">
+              <i class="fa-solid fa-user cursor-pointer"></i>
+
+            </div>
+          </li>
+          <li><a href="loginPage.html">Home</a></li>
+          <li tabindex="0">
+
+            <a href="index.html">Accessories</a>
+
+
+          </li>
+          <li><a href="index.html ">Men Fashion</a></li>
+          <li><a href="index.html ">Women Fashion</a></li>
+        </ul>
+      </div>
+      <!-- cart menu -->
+      <div id="cartSection" class="cartSection">
+        <div class="md:w-1/2 w-[80%] mx-auto text-center my-5  flex flex-col">
+          <ul id="cartMenu">
+            No Product are select for buy!
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+  <!-- navbar end -->
+
+  <main class="flex justify-center p-4 items-center h-[70vh] ">
+    <div class="w-full relative overflow-hidden md:w-[40%] rounded-md border border-allColor h-full bg-white">
+      <!-- registation form start -->
+      <div class="absolute transition-all  w-full right-[-100vw]" action="" method="post" id="FormRegistation">
+        <div class="form">
+          <h2>Register Form</h2>
+          <div class="form-menu1">
+            <label for="username">username </label>
+            <input type="username" id="username" placeholder="Enter your username">
+            <small>error message</small>
+          </div>
+          <div class="form-menu1">
+            <label for="Email">Email </label>
+            <input type="Email" id="EmailRegister" placeholder="Enter your email">
+            <small>error message</small>
+          </div>
+          <div class="form-menu1">
+            <label for="Password">Password </label>
+
+            <input type="password" id="regiPass" placeholder="Enter your password">
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
+            <small>error message</small>
+          </div>
+          <div class="form-menu1">
+            <label for="newpassword">Retype Password </label>
+            <input type="password" id="newpassword" placeholder="Enter new password">
+            <i class="bi bi-eye-slash" id="togglePassword1"></i>
+
+          </div>
+          <div class="font-monot mt-4 text-left w-[80%] mx-auto">
+            <p>Already have an account / <button id="loginPage"
+                class="underline text-blue-600 font-semibold ">Login</button></p>
+          </div>
+          <button id="btnRegister" class="btnRegister h-12 font-semibold">Register</button>
+          <p id="regMassage" class="font-monot text-sm"></p>
+        </div>
+
+
+      </div>
+      <!-- registation form ends -->
+      <!-- login form starts -->
+      <div class="absolute transition-all w-full left-0" action="" method="post" id="Form">
+        <div class="form ">
+          <h2>Login Form</h2>
+
+          <div class="form-menu1 md:mt-28">
+            <label for="Email">Email </label>
+            <input type="Email" id="EmailLogin" placeholder="Enter your email">
+            <small>error message</small>
+          </div>
+          <div class="form-menu1">
+            <label for="Password">Password </label>
+
+            <input type="password" id="passLogin" placeholder="Enter your password">
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
+            <small>error message</small>
+          </div>
+
+          <div class="font-monot text-left w-[80%] mx-auto">
+            <p>Register for new account / <button id="register"
+                class="underline text-blue-600 font-semibold ">Register</button>
+            </p>
+          </div>
+          <button id="LoginBtn" class="btn mt-5 ">Login</button>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+
+
+  <!-- footer section -->
+  <footer class=" flex justify-center  items-center   h-auto mt-28 pb-12">
+    <div class="grid grid-cols-1 w-full gap-5 md:grid-cols-4 px-12">
+      <div class=" p-2">
+        <a class=" font-bebas text-allColor normal-case text-3xl">Fashion <span class="text-black">Bd</span></a>
+        <p>Email: islmamdfoisal54@gmail.com</p>
+        <p>Phone: 01403406419</p>
+      </div>
+      <div class="">
+        <h2 class="font-bebas text-xl">Information</h2>
+        <ul class="footUl">
+          <li class="cursor-pointer">About</li>
+          <li class="cursor-pointer">Contuct</li>
+          <li class="cursor-pointer">Blog</li>
+          <li class="cursor-pointer">Turms & Condition</li>
+          <li class="cursor-pointer">Returns & Exchanges</li>
+        </ul>
+      </div>
+      <div class="">
+        <h2 class="font-bebas text-xl">Account details</h2>
+        <ul class="footUl">
+          <li class="cursor-pointer">My Account</li>
+          <li class="cursor-pointer">View Cart</li>
+          <li class="cursor-pointer">My Wishlist</li>
+          <li class="cursor-pointer">Order Status</li>
+          <li class="cursor-pointer">Track My Order</li>
+        </ul>
+      </div>
+      <div class="">
+        <h2 class="font-bebas text-xl">Safe payments</h2>
+        <div class="flex justify-between items-center">
+          <h3 class="text-3xl font-bold  hover:text-allColor">G <span class="text-2xl font-normal">Pay</span></h3>
+
+          <h3 class="text-3xl font-bold   hover:text-allColor">VISA</h3>
+          <h3 class="text-3xl font-bold  hover:text-allColor"><i class="fa-brands fa-apple"></i> <span
+              class="text-2xl font-normal">Pay</span></h3>
+        </div>
+        <fieldset class=" px-5 my-2 border-2 border-dashed border-black">
+          <legend> <i class="fa-solid fa-scissors text-3xl mx-1"></i></legend>
+          <a class=" font-bebas text-allColor normal-case text-3xl">Fashion <span class="text-black">Bd</span></a>
+        </fieldset>
+      </div>
+
+    </div>
+  </footer>
+  <!-- js file section -->
+  <script src="js/tailwind.config.js"></script>
+  <script src="js/hello.js"></script>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

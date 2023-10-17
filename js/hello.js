@@ -8,14 +8,17 @@ navBtn.addEventListener('click', () => {
   navBtn.style.display = 'none';
   navCross.style.display = 'block';
 });
+// profile menu variable
+const profeleMenu = document.getElementById('profileMenu');
+// navbar cross btn
 navCross.addEventListener('click', () => {
   dropDown.style.left = '-100vw';
   navCross.style.display = 'none';
   navBtn.style.display = 'block';
+  profeleMenu.classList.remove('ne');
 });
 // profile section
 document.getElementById('profileBtn').addEventListener('click', () => {
-  const profeleMenu = document.getElementById('profileMenu');
   if (profeleMenu.classList == 'profileMenu') {
     profeleMenu.classList.add('ne');
   } else {
@@ -92,7 +95,7 @@ for (const cartBtn of addCart) {
     const innerCart = document.getElementById('cartMenu');
     innerCart.innerHTML = `
     <div class="block">
-    <p class="font-monot text-2xl my-5">Quantity: <i id="minus" class="fa-solid fa-minus ms-10 me-5 cursor-pointer"></i>
+    <p id="qun" class="font-monot text-2xl my-5">Quantity: <i id="minus" class="fa-solid fa-minus ms-10 me-5 cursor-pointer"></i>
     <span id="quantity">1</span> <i id="plus" class="fa-solid fa-plus mx-5 cursor-pointer"></i>
     </p>
       <p class="text-4xl font-monot font-semibold">Total Cost: <span id="total">${price}</span></p>
@@ -113,8 +116,13 @@ for (const cartBtn of addCart) {
 
     // increase and decrease the amount of quantity
     minus.addEventListener('click', () => {
-      quantity -= 1;
-      quantityField.innerText = quantity;
+      if (quantity < 2) {
+        alert('Product kokhono 1 er kom hote pare na');
+        return;
+      } else {
+        quantity -= 1;
+        quantityField.innerText = quantity;
+      }
       totalValue -= totalMulti;
       totalField.innerText = totalValue;
     });
